@@ -3,8 +3,8 @@ attach(dados)
 summary(dados)
 
 ## Mestástase por sexo ####
-counts <- table(Sexo, Presença_Metastase)
-barplot(counts, legend = (rownames(counts)), beside = T, main = "Presença de Metástase, por sexo", col = c("pink", "blue"))
+sex_pres.met <- table(Sexo, Presença_Metastase)
+barplot(sex_pres.met, legend = (rownames(sex_pres.met)), beside = T, main = "Presença de Metástase, por sexo", col = c("pink", "blue"))
 
 # 
 
