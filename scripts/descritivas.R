@@ -9,3 +9,4 @@ barplot(counts, legend = (rownames(counts)), beside = T, main = "Presença de Me
 # 
 
 detach(dados)
+rm(dados)
