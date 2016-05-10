@@ -6,3 +6,7 @@ barplot(obt.met, legend = (rownames(obt.met)), beside = T, main = "Metástase po
 barplot(causa.met, legend = (rownames(causa.met)), beside = T, main = "Metástase por Causa do Óbito", col = c("lightblue", "red"))
 dev.off()
 
+png("figuras/bp-obitos_hist.png")
+barplot(obt.hist, beside = T, legend.text = rownames(obt.hist), main = "Óbitos por tipo histológico", col = c("lightblue", "red"))
+dev.off()
+
