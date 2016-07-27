@@ -1,10 +1,10 @@
 ## Planilha excel ####
 library(xlsx)
-dados <- read.xlsx("../Dados Epidemiologicos CONDROSSARCOMA apos INCA padronizado.xls",1)
+dados.raw <- read.xlsx("../Dados Epidemiologicos CONDROSSARCOMA apos INCA padronizado.xlsx",1)
 
 ## Anominizando ####
-# dados <- dados[-c(1:6)]
-dados <- dados[c("Data_Nascimento","Sexo","Inicio_Sintomas", "Local_Cancer", "Lateralidade", "Local_Obs", "Data_Diagnostico", "Tipo_Histologico", "Hist_Obs", "Data_Tratamento", "Presença_Metastase", "Data_Metástase", "Obito", "Data_Obito", "Causa_Obito")]
+dados.raw <- dados.raw[-c(1)]
 
-write.table(dados,"dataset/dataset.dat")
-rm(dados)
+## Salvando ####
+write.table(dados.raw,"dataset/dataset.dat")
+rm(dados.raw)
