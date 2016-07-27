@@ -11,6 +11,11 @@ dados$Data_Obito <- as.Date(dados$Data_Obito)
 dados$Tipo_Histologico <- factor(dados$Tipo_Histologico, levels = c("G1", "G2", "G3", "D", "CC"))
 dados$dt <- dados$Data_Tratamento - dados$Data_Diagnostico
 
+## ## protótipo de diferenças por mês ####
+## d1 <- dados$Data_Diagnostico[9]
+## d2 <- dados$Data_Tratamento[9]
+## length(seq(d1,d2, "month")) - 1
+
 ## attach() ####
 attach(dados)
 
