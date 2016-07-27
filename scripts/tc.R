@@ -1,6 +1,4 @@
-dados <- read.table("dataset/dataset.dat")
-attach(dados)
-summary(dados)
+source("scripts/input.R")
 
 ## Mestástase por sexo ####
 sex_pres.met <- table(Presença_Metastase, Sexo)
@@ -20,6 +18,5 @@ barplot(obt.hist, beside = T, legend.text = rownames(obt.hist))
 
 chisq.test(obt.hist)
 
-detach(dados)
 rm(sex_pres.met, hist.met, obt.met, causa.met, obt.hist)
-rm(dados)
+source("scripts/cleanup.R")

@@ -1,3 +1,5 @@
+source("scripts/input.R")
+
 png("figuras/barplots.png")
 par(mfrow = c(2,2))
 barplot(sex_pres.met, legend = (rownames(sex_pres.met)), beside = T, main = "Metástase por sexo", col = c("lightblue", "red"))
@@ -10,3 +12,4 @@ png("figuras/bp-obitos_hist.png")
 barplot(obt.hist, beside = T, legend.text = rownames(obt.hist), main = "Óbitos por tipo histológico", col = c("lightblue", "red"))
 dev.off()
 
+source("scripts/cleanup.R")
