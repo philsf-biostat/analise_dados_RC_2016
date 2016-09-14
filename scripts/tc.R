@@ -1,16 +1,16 @@
 source("scripts/input.R")
 
 ## Mestástase por sexo ####
-sex_pres.met <- table(Presença_Metastase, Sexo)
+sex_pres.met <- table(Presenca_Metastase, Sexo)
 
 ## Metástase por tipo histológico
-hist.met <- table(Presença_Metastase, Tipo_Histologico)
+hist.met <- table(Presenca_Metastase, Tipo_Histologico)
 
 ## Metástase por óbito
-obt.met <- table(Presença_Metastase, Obito)
+obt.met <- table(Presenca_Metastase, Obito)
 
 ## Metástase por causa do óbito
-causa.met <- table(Presença_Metastase, Causa_Obito)
+causa.met <- table(Presenca_Metastase, Causa_Obito)
 
 # Obito por tipo histologico
 obt.hist <- table(Obito, Tipo_Histologico)
