@@ -1,11 +1,6 @@
-dados <- read.table("dataset/dataset.dat")
-attach(dados)
-summary(dados)
+source("scripts/input.R")
 
-## Mestástase por sexo ####
-counts <- table(Sexo, Presença_Metastase)
-barplot(counts, legend = (rownames(counts)), beside = T, main = "Presença de Metástase, por sexo", col = c("pink", "blue"))
+# Descrição do local do cancer
+round(prop.table(table(Localizacao)), digits = 3)*100
 
-# 
-
-detach(dados)
+source("scripts/cleanup.R")
