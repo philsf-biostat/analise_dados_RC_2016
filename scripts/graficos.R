@@ -14,5 +14,5 @@ barplot(obt.hist, beside = T, legend.text = rownames(obt.hist), main = "Óbitos 
 dev.off()
 
 rm(met.sex, met.hist, met.obt, met.causa)
-rm(obt.hist)
+rm(obt.sex, obt.hist, obt.met, obt.causa)
 source("scripts/cleanup.R")
