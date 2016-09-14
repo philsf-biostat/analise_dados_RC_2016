@@ -23,5 +23,11 @@ obt.sex <- table(Obito, Sexo)
 # Obito por tipo histologico
 obt.hist <- table(Obito, Tipo_Histologico)
 
+# Óbito por Metástase
+obt.met <- table(Obito, Presenca_Metastase)
+
+# Óbito por causa do óbito
+obt.causa <- table(Obito, Causa_Obito)
+
 ## Cleanup ####
 # source("scripts/cleanup.R")
