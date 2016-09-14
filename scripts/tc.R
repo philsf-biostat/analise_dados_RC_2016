@@ -1,22 +1,33 @@
-source("scripts/input.R")
+## Input ####
+# source("scripts/input.R")
 
-## Mestástase por sexo ####
-sex_pres.met <- table(Presença_Metastase, Sexo)
+## Metástase ####
+
+## Mestástase por sexo
+met.sex <- table(Presenca_Metastase, Sexo)
 
 ## Metástase por tipo histológico
-hist.met <- table(Presença_Metastase, Tipo_Histologico)
+met.hist <- table(Presenca_Metastase, Tipo_Histologico)
 
 ## Metástase por óbito
-obt.met <- table(Presença_Metastase, Obito)
+met.obt <- table(Presenca_Metastase, Obito)
 
 ## Metástase por causa do óbito
-causa.met <- table(Presença_Metastase, Causa_Obito)
+met.causa <- table(Presenca_Metastase, Causa_Obito)
+
+## Óbito ####
+
+# Obito por sexo
+obt.sex <- table(Obito, Sexo)
 
 # Obito por tipo histologico
 obt.hist <- table(Obito, Tipo_Histologico)
-barplot(obt.hist, beside = T, legend.text = rownames(obt.hist))
 
-chisq.test(obt.hist)
+# Óbito por Metástase
+obt.met <- table(Obito, Presenca_Metastase)
 
-rm(sex_pres.met, hist.met, obt.met, causa.met, obt.hist)
-source("scripts/cleanup.R")
+# Óbito por causa do óbito
+obt.causa <- table(Obito, Causa_Obito)
+
+## Cleanup ####
+# source("scripts/cleanup.R")
