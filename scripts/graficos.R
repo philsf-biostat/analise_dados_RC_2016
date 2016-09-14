@@ -13,5 +13,5 @@ png("figuras/bp-obitos_hist.png")
 barplot(obt.hist, beside = T, legend.text = rownames(obt.hist), main = "Óbitos por tipo histológico", col = c("lightblue", "red"))
 dev.off()
 
-rm(sex.met, hist.met, obt.met, causa.met, obt.hist)
+rm(met.sex, met.hist, met.obt, met.causa, obt.hist)
 source("scripts/cleanup.R")
