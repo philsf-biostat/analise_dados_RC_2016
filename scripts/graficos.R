@@ -1,4 +1,5 @@
 source("scripts/input.R")
+source("scripts/tc.R")
 
 png("figuras/barplots.png")
 par(mfrow = c(2,2))
@@ -12,4 +13,5 @@ png("figuras/bp-obitos_hist.png")
 barplot(obt.hist, beside = T, legend.text = rownames(obt.hist), main = "Óbitos por tipo histológico", col = c("lightblue", "red"))
 dev.off()
 
+rm(sex.met, hist.met, obt.met, causa.met, obt.hist)
 source("scripts/cleanup.R")

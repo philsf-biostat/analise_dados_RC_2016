@@ -1,4 +1,4 @@
-source("scripts/input.R")
+# source("scripts/input.R")
 
 ## Mestástase por sexo ####
 sex.met <- table(Presenca_Metastase, Sexo)
@@ -22,5 +22,4 @@ barplot(obt.hist, beside = T, legend.text = rownames(obt.hist))
 
 chisq.test(obt.hist)
 
-rm(sex.met, hist.met, obt.met, causa.met, obt.hist)
-source("scripts/cleanup.R")
+# source("scripts/cleanup.R")
