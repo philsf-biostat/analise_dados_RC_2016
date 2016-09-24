@@ -12,8 +12,8 @@ met.hist <- table(Presenca_Metastase, Tipo_Histologico)
 ## Metástase por óbito
 met.obt <- table(Presenca_Metastase, Obito)
 
-## Metástase por causa do óbito
-met.causa <- table(Presenca_Metastase, Causa_Obito)
+## Metástase por tipo de cirurgia
+met.cir <- table(Presenca_Metastase, Tipo_Cirurgia)
 
 ## Óbito ####
 
@@ -26,8 +26,8 @@ obt.hist <- table(Obito, Tipo_Histologico)
 # Óbito por Metástase
 obt.met <- table(Obito, Presenca_Metastase)
 
-# Óbito por causa do óbito
-obt.causa <- table(Obito, Causa_Obito)
+## Metástase por tipo de cirurgia
+obt.cir <- table(Obito, Tipo_Cirurgia)
 
 ## Cleanup ####
 # source("scripts/cleanup.R")
