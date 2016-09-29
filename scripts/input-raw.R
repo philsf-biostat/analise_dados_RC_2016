@@ -1,6 +1,6 @@
 ## Planilha excel ####
 library(xlsx)
-dados.raw <- read.xlsx("../Dados Epidemiologicos CONDROSSARCOMA apos INCA padronizado.xlsx",1)
+dados.raw <- read.xlsx("../Dados Epidemiologicos CONDROSSARCOMA 27_09_2016.xlsx",1)
 
 ## Anominizando ####
 dados.raw <- dados.raw[-c(1)]
