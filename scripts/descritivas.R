@@ -9,4 +9,5 @@ tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Pr
 # print(tabela1, showAlllevels = T)
 summary(tabela1)
 
+rm(tabela1)
 source("scripts/cleanup.R")
