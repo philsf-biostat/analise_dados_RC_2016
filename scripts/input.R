@@ -14,7 +14,7 @@ dados$Estadiamento <- factor(dados$Estadiamento)
 dados$dt <- dados$Data_Tratamento - dados$Data_Diagnostico
 
 ## Removendo variáveis não consideradas ####
-dados <- dados[!names(dados) %in% c("Causa_Obito", "Hist_Obs")]
+dados <- dados[!names(dados) %in% c("Causa_Obito", "Hist_Obs", "Data_Recidiva")]
 
 ## ## protótipo de diferenças por mês ####
 ## d1 <- dados$Data_Diagnostico[9]
