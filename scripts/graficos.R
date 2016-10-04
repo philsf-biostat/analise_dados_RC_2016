@@ -19,10 +19,10 @@ dev.off()
 
 png("figuras/barplots-estadiamento.png", width = 700, height = 700)
 par(mfrow = c(2,2))
-barplot(est.sex, legend.text = (rownames(est.sex)), beside = T, main = "Estadiamento por sexo", col = c("lightblue", "red"), xlab = "Sexo", args.legend = list(title = "Estadiamento"))
-barplot(est.hist, legend.text =  (rownames(est.hist)), beside = T, main = "Estadiamento por tipo histológico", col = c("lightblue", "red"), xlab = "Tipo histológico", args.legend = list(title = "Estadiamento"))
-barplot(est.obt, legend.text =  (rownames(est.obt)), beside = T, main = "Estadiamento por Óbito", col = c("lightblue", "red"), xlab = "Óbito", args.legend = list(title = "Estadiamento"))
-barplot(est.cir, legend.text =  (rownames(est.cir)), beside = T, main = "Estadiamento por tipo de cirurgia", col = c("lightblue", "red"), xlab = "Tipo de cirurgia", args.legend = list(title = "Estadiamento"))
+barplot(est.sex, legend.text = (rownames(est.sex)), beside = T, col = c("lightblue", "red"), xlab = "Sexo", args.legend = list(title = "Estadiamento"), main = paste("p-valor:",round(fisher.test(est.sex)$p.value, 4)))
+barplot(est.hist, legend.text =  (rownames(est.hist)), beside = T, col = c("lightblue", "red"), xlab = "Tipo histológico", args.legend = list(title = "Estadiamento"), main = paste("p-valor:",round(fisher.test(est.hist, workspace = 2e+6)$p.value, 4)))
+barplot(est.obt, legend.text =  (rownames(est.obt)), beside = T, col = c("lightblue", "red"), xlab = "Óbito", args.legend = list(title = "Estadiamento"), main = paste("p-valor:",round(fisher.test(est.obt)$p.value, 4)))
+barplot(est.cir, legend.text =  (rownames(est.cir)), beside = T, col = c("lightblue", "red"), xlab = "Tipo de cirurgia", args.legend = list(title = "Estadiamento"), main = paste("p-valor:",round(fisher.test(est.cir)$p.value, 4)))
 dev.off()
 
 
