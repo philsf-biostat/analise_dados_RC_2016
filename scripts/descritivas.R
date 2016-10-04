@@ -5,7 +5,7 @@ source("scripts/input.R")
 
 library(tableone)
 
-tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Obito", "Causa_Obito", "Localizacao", "Tipo_Cirurgia", "Estadiamento"))
+tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Obito", "Localizacao", "Tipo_Cirurgia", "Estadiamento"))
 # print(tabela1, showAlllevels = T)
 summary(tabela1)
 
