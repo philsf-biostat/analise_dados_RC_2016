@@ -1,7 +1,7 @@
 source("scripts/input.R")
 source("scripts/tc.R")
 
-png("figuras/barplots.png", width = 700, height = 700)
+png("figuras/barplots-metastase.png", width = 700, height = 700)
 par(mfrow = c(2,2))
 barplot(met.sex, legend.text = (rownames(met.sex)), beside = T, main = "Metástase por sexo", col = c("lightblue", "red"), xlab = "Sexo", args.legend = list(title = "Metástase"))
 barplot(met.hist, legend.text =  (rownames(met.hist)), beside = T, main = "Metástase por tipo histológico", col = c("lightblue", "red"), xlab = "Tipo histológico", args.legend = list(title = "Metástase"))
