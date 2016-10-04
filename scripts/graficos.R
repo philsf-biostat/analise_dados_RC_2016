@@ -11,11 +11,13 @@ rm(t)
 dev.off()
 
 png("figuras/bp-obitos_hist.png", width = 700, height = 700)
-barplot(obt.hist, beside = T, legend.text = rownames(obt.hist), main = "Óbitos por tipo histológico", col = c("lightblue", "red"), xlab = "Tipo histológico", args.legend = list(title = "Óbito"))
+t <- obt.hist; barplot(t, beside = T, legend.text = rownames(t), col = c("lightblue", "red"), xlab = "Tipo histológico", args.legend = list(title = "Óbito"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)))
+rm(t)
 dev.off()
 
 png("figuras/bp-obitos_cir.png", width = 700, height = 700)
-barplot(obt.cir, beside = T, legend.text = rownames(obt.cir), main = "Óbitos por tipo de cirurgia", col = c("lightblue", "red"), xlab = "Tipo de cirurgia", args.legend = list(title = "Óbito"))
+t <- obt.cir; barplot(t, beside = T, legend.text = rownames(t), col = c("lightblue", "red"), xlab = "Tipo de cirurgia", args.legend = list(title = "Óbito"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)))
+rm(t)
 dev.off()
 
 png("figuras/barplots-estadiamento.png", width = 700, height = 700)
