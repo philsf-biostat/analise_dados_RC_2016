@@ -5,26 +5,26 @@ source("scripts/input.R")
 
 library(pander)
 panderOptions('table.style', 'rmarkdown')
-panderOptions('table.split.table',Inf)
+panderOptions('table.split.table',90)
 
 library(tableone)
 
 tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Obito", "Localizacao", "Tipo_Cirurgia", "Estadiamento"))
-pander(print(tabela1, showAllLevels = T))
+pander(print(tabela1, showAllLevels = T, printToggle = F))
 
 # Estratificação: Óbito ####
 t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento"), strata = "Obito", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
-pander(print(t, showAllLevels = T, exact = T))
+pander(print(t, showAllLevels = T, exact = T, printToggle = F))
 rm(t)
 
 # Estratificação: Metástase ####
 t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento"), strata = "Presenca_Metastase", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
-pander(print(t, showAllLevels = T, exact = T, strata = "Presenca_Metastase"))
+pander(print(t, showAllLevels = T, exact = T, strata = "Presenca_Metastase", printToggle = F))
 rm(t)
 
 # Estratificação: Estadiamento ####
 t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia"), strata = "Estadiamento", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
-pander(print(t, showAllLevels = T, exact = T))
+pander(print(t, showAllLevels = T, exact = T, printToggle = F))
 rm(t)
 
 rm(tabela1)
