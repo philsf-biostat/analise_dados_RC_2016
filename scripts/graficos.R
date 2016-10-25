@@ -29,6 +29,10 @@ t <- est.cir; barplot(t, legend.text =  (rownames(t)), beside = T, xlab = "Tipo 
 rm(t)
 dev.off()
 
+png("figuras/barplots-tipo_tempo.png", width = 700, height = 700)
+t <- tip.tmp; barplot(t, legend.text =  (rownames(t)), beside = T, xlab = "Tipo de cirurgia", args.legend = list(title = "Tempo de Diagnóstico"), main = paste("p-valor:",round(fisher.test(t, workspace = 2e+6)$p.value, 4)))
+rm(t)
+dev.off()
 
 rm(met.sex, met.hist, met.obt, met.cir)
 rm(obt.sex, obt.hist, obt.met, obt.cir)

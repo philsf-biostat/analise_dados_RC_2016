@@ -45,3 +45,8 @@ est.cir <- table(Estadiamento, Tipo_Cirurgia)
 
 ## Cleanup ####
 # source("scripts/cleanup.R")
+
+## Tipo de Cirurgia ####
+
+## Tempo de diagnóstico
+tip.tmp <- table(Tipo_Cirurgia, tempo.diagnostico)
