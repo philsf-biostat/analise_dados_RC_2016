@@ -9,16 +9,16 @@ panderOptions('table.split.table',90)
 
 library(tableone)
 
-tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Obito", "Localizacao", "Tipo_Cirurgia", "Estadiamento"))
+tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Obito", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"))
 pander(print(tabela1, showAllLevels = T, printToggle = F))
 
 # Estratificação: Óbito ####
-t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento"), strata = "Obito", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
+t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"), strata = "Obito", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
 pander(print(t, showAllLevels = T, exact = T, printToggle = F))
 rm(t)
 
 # Estratificação: Metástase ####
-t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento"), strata = "Presenca_Metastase", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
+t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"), strata = "Presenca_Metastase", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
 pander(print(t, showAllLevels = T, exact = T, strata = "Presenca_Metastase", printToggle = F))
 rm(t)
 
