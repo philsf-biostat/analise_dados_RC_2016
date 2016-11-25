@@ -13,3 +13,64 @@ Foi aplicado o teste de normalidade de Shapiro-Wilks nas variáveis numéricas. 
 
 # Resultados
 
+
+```{r, echo=FALSE}
+library(tableone)
+library(pander)
+library(knitr)
+# panderOptions('table.style', 'rmarkdown')
+panderOptions('table.split.table',Inf)
+opts_knit$set(root.dir = "..")
+```
+
+
+
+```{r input, echo = FALSE}
+# setwd("..")
+source("scripts/input.R", local = TRUE)
+
+# rm(tabela1)
+
+# source("scripts/cleanup.R", local = TRUE)
+
+```
+
+## Descritiva pura
+
+```{r descritiva, echo = F}
+
+tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Obito", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"))
+pander(print(tabela1, showAllLevels = T, printToggle = F))
+rm(tabela1)
+
+```
+
+## Extratificação: Óbito
+
+```{r obito, echo = F}
+t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"), strata = "Obito", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
+pander(print(t, showAllLevels = T, exact = T, printToggle = F))
+rm(t)
+
+
+```
+
+## Extratificação: Metástase
+
+```{r metastase, echo = F}
+t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"), strata = "Presenca_Metastase", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
+pander(print(t, showAllLevels = T, exact = T, printToggle = F, strata = "Presenca_Metastase"))
+rm(t)
+
+```
+
+## Extratificação: Estadiamento
+
+```{r estadiamento, echo = F}
+
+t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "tempo.diagnostico"), strata = "Estadiamento", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
+pander(print(t, showAllLevels = T, exact = T, printToggle = F))
+rm(t)
+
+```
+
