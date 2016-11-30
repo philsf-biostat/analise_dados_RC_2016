@@ -11,6 +11,7 @@ dados$Data_Obito <- as.Date(dados$Data_Obito)
 dados$Data_Recidiva <- as.Date(dados$Data_Recidiva)
 dados$Tipo_Histologico <- factor(dados$Tipo_Histologico, levels = c("G1", "G2", "G3", "D", "CC"))
 dados$Estadiamento <- factor(dados$Estadiamento)
+dados$tempo.diagnostico <- ordered(dados$tempo.diagnostico, levels = c("<3meses", "3 A 6 MESES", "6m a 1ano", "1 a 3 anos", ">3anos"))
 dados$dt <- dados$Data_Tratamento - dados$Data_Diagnostico
 
 ## Removendo variáveis não consideradas ####
