@@ -16,6 +16,8 @@ Para variáveis normais, foi aplicada a correlação de Pearson, e para variáve
 Em todas as análises, foi adotada a significância de 5%.
 As análises estatísticas foram feitas utilizando o software estatístico R, versão 3.3.2 (https://www.R-project.org).
 
+Foram feitas tabelas de contingência de dados categóricos de contagens. A significância da associação desses dados foi feita utilizando-se o teste exato de Fisher.
+
 # Resultados
 
 
