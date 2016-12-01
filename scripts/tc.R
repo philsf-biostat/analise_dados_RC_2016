@@ -29,5 +29,24 @@ obt.met <- table(Obito, Presenca_Metastase)
 ## Metástase por tipo de cirurgia
 obt.cir <- table(Obito, Tipo_Cirurgia)
 
+## Estadiamento ####
+
+## Mestástase por sexo
+est.sex <- table(Estadiamento, Sexo)
+
+## Estadiamento por tipo histológico
+est.hist <- table(Estadiamento, Tipo_Histologico)
+
+## Estadiamento por óbito
+est.obt <- table(Estadiamento, Obito)
+
+## Estadiamento por tipo de cirurgia
+est.cir <- table(Estadiamento, Tipo_Cirurgia)
+
 ## Cleanup ####
 # source("scripts/cleanup.R")
+
+## Tipo de Cirurgia ####
+
+## Tempo de diagnóstico
+tip.tmp <- table(Tipo_Cirurgia, tempo.diagnostico)
