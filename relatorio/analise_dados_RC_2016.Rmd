@@ -7,7 +7,8 @@ output: html_document
 
 # Metodologia utilizada
 
-A análise descritiva foi apresentada na forma de tabelas e figuras. Os dados observados, expressos pela média e desvio padrão (DP) para dados numéricos (quantitativos) e pela frequência (n) e percentual (%) para dados categóricos (qualitativos).
+A análise descritiva foi apresentada na forma de tabelas e figuras.
+Os dados observados, expressos pela média e desvio padrão (DP) para dados numéricos (quantitativos) e pela frequência (n) e percentual (%) para dados categóricos (qualitativos).
 Foram feitas tabelas de contingência de dados categóricos de contagens.
 A significância da associação desses dados foi feita utilizando-se o teste exato de Fisher.
 
