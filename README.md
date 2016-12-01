@@ -29,8 +29,8 @@ Abaixo estão os resultados "brutos". A apresentação foi formatada no relatór
 
 Figuras descritivas das variáveis.
 
-- [Dados por Estadiamento](figuras/barplots-estadiamento.png)
-- [Dados por Metástase](figuras/barplots-metastase.png)
-- [Tipo de cirurgia por tempo de diagnóstico](figuras/barplots-tipo_tempo.png)
-- [Óbitos por tipo de cirurgia](figuras/bp-obitos_cir.png)
-- [Óbitos por tipo histológico](figuras/bp-obitos_hist.png)
+- [Dados por Estadiamento](figuras/barplots-estadiamento.png?raw=true)
+- [Dados por Metástase](figuras/barplots-metastase.png?raw=true)
+- [Tipo de cirurgia por tempo de diagnóstico](figuras/barplots-tipo_tempo.png?raw=true)
+- [Óbitos por tipo de cirurgia](figuras/bp-obitos_cir.png?raw=true)
+- [Óbitos por tipo histológico](figuras/bp-obitos_hist.png?raw=true)
