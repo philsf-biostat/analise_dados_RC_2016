@@ -25,25 +25,12 @@ Todas as informações descritas abaixo estão sumarizadas no relatório. Este i
 
 Abaixo estão os resultados "brutos". A apresentação foi formatada no relatório acima.
 
-### Estatísticas descritivas ###
-
-Sumário das estatísticas descritivas das variáveis.
-
-* ~~[descricao.txt][] ([download][download-desc-txt])~~
-
-[descricao.txt]: resultados/descricoes.md
-[download-desc-txt]: resultados/descricoes.txt
-
-### Teste de normalidade ###
-
-p-valores do teste de normalidade das variáveis numéricas
-
-* ~~[normalidade.txt][] ([download][download-norm-txt])~~
-
-[normalidade.txt]: resultados/normalidade.md
-[download-norm-txt]: resultados/normalidade.txt
-
 ### Figuras ###
 
 Figuras descritivas das variáveis.
 
+- [Dados por Estadiamento](figuras/barplots-estadiamento.png?raw=true)
+- [Dados por Metástase](figuras/barplots-metastase.png?raw=true)
+- [Tipo de cirurgia por tempo de diagnóstico](figuras/barplots-tipo_tempo.png?raw=true)
+- [Óbitos por tipo de cirurgia](figuras/bp-obitos_cir.png?raw=true)
+- [Óbitos por tipo histológico](figuras/bp-obitos_hist.png?raw=true)
