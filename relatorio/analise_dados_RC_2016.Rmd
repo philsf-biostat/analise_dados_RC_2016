@@ -9,11 +9,12 @@ output: html_document
 
 A análise descritiva foi apresentada na forma de tabelas e figuras. Os dados observados, expressos pela média e desvio padrão (DP) para dados numéricos (quantitativos) e pela frequência (n) e percentual (%) para dados categóricos (qualitativos).
 Ao longo do texto, as variáveis normais foram sumarizadas como média +/- desvio padrão (DP).
+Foram feitas tabelas de contingência de dados categóricos de contagens.
+A significância da associação desses dados foi feita utilizando-se o teste exato de Fisher.
 
 Em todas as análises, foi adotada a significância de 5%.
 As análises estatísticas foram feitas utilizando o software estatístico R, versão 3.3.2 (https://www.R-project.org).
 
-Foram feitas tabelas de contingência de dados categóricos de contagens. A significância da associação desses dados foi feita utilizando-se o teste exato de Fisher.
 
 # Resultados
 
