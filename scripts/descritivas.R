@@ -10,7 +10,9 @@ panderOptions('table.split.table',90)
 library(tableone)
 
 tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Obito", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"))
-pander(print(tabela1, showAllLevels = T, printToggle = F))
+tabela1 <- print(tabela1, showAllLevels = T, printToggle = F, quote = F)
+write.csv2(tabela1, "resultados/tabela1.csv")
+pander(tabela1)
 
 # Estratificação: Óbito ####
 t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"), strata = "Obito", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
@@ -21,12 +23,16 @@ rm(t)
 
 # Estratificação: Metástase ####
 t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"), strata = "Presenca_Metastase", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
-pander(print(t, showAllLevels = T, exact = T, strata = "Presenca_Metastase", printToggle = F))
+t <- print(t, showAllLevels = T, exact = T, strata = "Presenca_Metastase", printToggle = F, quote = F)
+write.csv2(t, "resultados/tabela_met.csv")
+pander(t)
 rm(t)
 
 # Estratificação: Estadiamento ####
 t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia"), strata = "Estadiamento", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
-pander(print(t, showAllLevels = T, exact = T, printToggle = F))
+t <- print(t, showAllLevels = T, exact = T, printToggle = F, quote = F)
+write.csv2(t, "resultados/tabela_estadiam.csv")
+pander(t)
 rm(t)
 
 rm(tabela1)
