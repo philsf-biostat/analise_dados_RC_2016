@@ -14,7 +14,9 @@ pander(print(tabela1, showAllLevels = T, printToggle = F))
 
 # Estratificação: Óbito ####
 t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"), strata = "Obito", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
-pander(print(t, showAllLevels = T, exact = T, printToggle = F))
+t <- print(t, showAllLevels = T, exact = T, printToggle = F, quote = F)
+write.csv2(t, "resultados/tabela_obito.csv")
+pander(t)
 rm(t)
 
 # Estratificação: Metástase ####
