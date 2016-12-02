@@ -13,6 +13,7 @@ tabela1 <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Pr
 tabela1 <- print(tabela1, showAllLevels = T, printToggle = F, quote = F)
 write.csv2(tabela1, "resultados/tabela1.csv")
 pander(tabela1)
+rm(tabela1)
 
 # Estratificação: Óbito ####
 t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "Estadiamento", "tempo.diagnostico"), strata = "Obito", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
@@ -35,5 +36,4 @@ write.csv2(t, "resultados/tabela_estadiam.csv")
 pander(t)
 rm(t)
 
-rm(tabela1)
 source("scripts/cleanup.R")
