@@ -29,6 +29,9 @@ obt.met <- table(Presenca_Metastase, Obito)
 ## Metástase por tipo de cirurgia
 obt.cir <- table(Tipo_Cirurgia, Obito)
 
+## Óbito por Estadiamento
+obt.est <- table(Estadiamento, Obito)
+
 ## Estadiamento ####
 
 ## Mestástase por sexo
