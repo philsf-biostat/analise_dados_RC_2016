@@ -1,6 +1,17 @@
 source("scripts/input.R")
 source("scripts/tc.R")
 
+mybarplot <- function(tab, main) {
+  barplot(tab,
+          legend.text = (rownames(tab)),
+          beside = T,
+          col = rainbow(length((rownames(tab))), .7, .7),
+          main = main,
+          args.legend = list(title = names(dimnames(tab))[1]),
+          xlab = paste("p-valor:", format.pval(fisher.test(tab)$p.value, eps = .001, digits = 2)),
+          ylab = "Número de pacientes")
+}
+
 png("figuras/barplots-metastase.png", width = 700, height = 700)
 par(mfrow = c(2,2))
 t <- met.sex; barplot(t, legend.text = (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), main = "Metástase por Sexo", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 2)), ylab = "Número de pacientes")
