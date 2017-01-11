@@ -8,7 +8,7 @@ mybarplot <- function(tab, main) {
           col = rainbow(length((rownames(tab))), .7, .7),
           main = main,
           args.legend = list(title = names(dimnames(tab))[1]),
-          xlab = paste("p-valor:", format.pval(fisher.test(tab)$p.value, eps = .001, digits = 2)),
+          xlab = paste("p-valor:", format.pval(fisher.test(tab, workspace = 2e+6)$p.value, eps = .001, digits = 2)),
           ylab = "Número de pacientes")
 }
 
@@ -39,7 +39,7 @@ dev.off()
 png("figuras/barplots-estadiamento.png", width = 700, height = 700)
 par(mfrow = c(2,2))
 mybarplot(est.sex, main = "Estadiamento por Sexo")
-# mybarplot(est.hist, main = "Estadiamento por Tipo histológico")
+mybarplot(est.hist, main = "Estadiamento por Tipo histológico")
 mybarplot(est.obt, main = "Estadiamento por Óbito")
 mybarplot(est.cir, main = "Estadiamento por Tipo de cirurgia")
 dev.off()
