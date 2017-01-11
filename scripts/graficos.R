@@ -12,11 +12,15 @@ mybarplot <- function(tab, main) {
           ylab = "Número de pacientes")
 }
 
-png("figuras/barplots-metastase.png", width = 700, height = 700)
-par(mfrow = c(2,2))
+png("figuras/bp-metastase_sexo.png", 700, 700)
 mybarplot(met.sex, main = "Metástase por Sexo")
+dev.off()
+
+png("figuras/bp-metastase_hist.png", 700, 700)
 mybarplot(met.hist, main = "Metástase por Tipo histológico")
-mybarplot(met.obt, main = "Metástase por Óbito")
+dev.off()
+
+png("figuras/bp-metastase_cirurg.png", 700, 700)
 mybarplot(met.cir, main = "Metástase por Tipo de cirurgia")
 dev.off()
 
@@ -32,15 +36,19 @@ png("figuras/bp-obitos_estad.png", 700, 700)
 mybarplot(obt.est, main = "Óbito por Estadiamento")
 dev.off()
 
-png("figuras/bp-obitos_cir.png", width = 700, height = 700)
+png("figuras/bp-obitos_cirurg.png", width = 700, height = 700)
 mybarplot(obt.cir, main = "Óbito por Tipo de cirurgia")
 dev.off()
 
-png("figuras/barplots-estadiamento.png", width = 700, height = 700)
-par(mfrow = c(2,2))
+png("figuras/bp-estad_sexo.png", 700, 700)
 mybarplot(est.sex, main = "Estadiamento por Sexo")
+dev.off()
+
+png("figuras/bp-estad_hist.png", 700, 700)
 mybarplot(est.hist, main = "Estadiamento por Tipo histológico")
-mybarplot(est.obt, main = "Estadiamento por Óbito")
+dev.off()
+
+png("figuras/bp-estad_cirurg.png", 700, 700)
 mybarplot(est.cir, main = "Estadiamento por Tipo de cirurgia")
 dev.off()
 
