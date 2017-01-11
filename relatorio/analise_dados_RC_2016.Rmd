@@ -36,7 +36,7 @@ opts_knit$set(root.dir = "..")
 
 ```{r input, echo = FALSE}
 # setwd("..")
-source("scripts/input.R", local = TRUE)
+source("scripts/input.R", local = TRUE, encoding = 'UTF-8')
 
 # rm(tabela1)
 

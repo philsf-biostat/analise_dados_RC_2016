@@ -1,36 +1,59 @@
-source("scripts/input.R")
-source("scripts/tc.R")
+source("scripts/input.R", encoding = 'UTF-8')
+source("scripts/tc.R", encoding = 'UTF-8')
 
-png("figuras/barplots-metastase.png", width = 700, height = 700)
-par(mfrow = c(2,2))
-t <- met.sex; barplot(t, legend.text = (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), xlab = "Sexo", args.legend = list(title = "Metástase"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)))
-t <- met.hist; barplot(t, legend.text =  (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), xlab = "Tipo histológico", args.legend = list(title = "Metástase"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)))
-t <- met.obt; barplot(t, legend.text =  (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), xlab = "Óbito", args.legend = list(title = "Metástase"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)))
-t <- met.cir; barplot(t, legend.text =  (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), xlab = "Tipo de cirurgia", args.legend = list(title = "Metástase"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)))
-rm(t)
+mybarplot <- function(tab, main) {
+  barplot(tab,
+          legend.text = (rownames(tab)),
+          beside = T,
+          col = rainbow(length((rownames(tab))), .7, .7),
+          main = main,
+          args.legend = list(title = names(dimnames(tab))[1]),
+          xlab = paste("p-valor:", format.pval(fisher.test(tab, workspace = 2e+6)$p.value, eps = .001, digits = 2)),
+          ylab = "Número de pacientes")
+}
+
+png("figuras/bp-metastase_sexo.png", 700, 700)
+mybarplot(met.sex, main = "Metástase por Sexo")
+dev.off()
+
+png("figuras/bp-metastase_hist.png", 700, 700)
+mybarplot(met.hist, main = "Metástase por Tipo histológico")
+dev.off()
+
+png("figuras/bp-metastase_cirurg.png", 700, 700)
+mybarplot(met.cir, main = "Metástase por Tipo de cirurgia")
 dev.off()
 
 png("figuras/bp-obitos_hist.png", width = 700, height = 700)
-t <- obt.hist; barplot(t, beside = T, legend.text = rownames(t), col = rainbow(length((rownames(t))), .7, .7), xlab = "Tipo histológico", args.legend = list(title = "Óbito"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)))
-rm(t)
+mybarplot(obt.hist, main = "Óbito por Tipo histológico")
 dev.off()
 
-png("figuras/bp-obitos_cir.png", width = 700, height = 700)
-t <- obt.cir; barplot(t, beside = T, legend.text = rownames(t), col = rainbow(length((rownames(t))), .7, .7), xlab = "Tipo de cirurgia", args.legend = list(title = "Óbito"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)))
-rm(t)
+png("figuras/bp-obitos_met.png", 700, 700)
+mybarplot(obt.met, main = "Óbito por presença de metástase")
 dev.off()
 
-png("figuras/barplots-estadiamento.png", width = 700, height = 700)
-par(mfrow = c(2,2))
-t <- est.sex; barplot(t, legend.text = (rownames(t)), beside = T, xlab = "Sexo", args.legend = list(title = "Estadiamento"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)), col = rainbow(length((rownames(t))), .7, .7))
-t <- est.hist; barplot(t, legend.text =  (rownames(t)), beside = T, xlab = "Tipo histológico", args.legend = list(title = "Estadiamento"), main = paste("p-valor:",round(fisher.test(t, workspace = 2e+6)$p.value, 4)), col = rainbow(length((rownames(t))), .7, .7))
-t <- est.obt; barplot(t, legend.text =  (rownames(t)), beside = T, xlab = "Óbito", args.legend = list(title = "Estadiamento"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)), col = rainbow(length((rownames(t))), .7, .7))
-t <- est.cir; barplot(t, legend.text =  (rownames(t)), beside = T, xlab = "Tipo de cirurgia", args.legend = list(title = "Estadiamento"), main = paste("p-valor:",round(fisher.test(t)$p.value, 4)), col = rainbow(length((rownames(t))), .7, .7))
-rm(t)
+png("figuras/bp-obitos_estad.png", 700, 700)
+mybarplot(obt.est, main = "Óbito por Estadiamento")
+dev.off()
+
+png("figuras/bp-obitos_cirurg.png", width = 700, height = 700)
+mybarplot(obt.cir, main = "Óbito por Tipo de cirurgia")
+dev.off()
+
+png("figuras/bp-estad_sexo.png", 700, 700)
+mybarplot(est.sex, main = "Estadiamento por Sexo")
+dev.off()
+
+png("figuras/bp-estad_hist.png", 700, 700)
+mybarplot(est.hist, main = "Estadiamento por Tipo histológico")
+dev.off()
+
+png("figuras/bp-estad_cirurg.png", 700, 700)
+mybarplot(est.cir, main = "Estadiamento por Tipo de cirurgia")
 dev.off()
 
 png("figuras/barplots-tipo_tempo.png", width = 700, height = 700)
-t <- tip.tmp; barplot(t, legend.text =  (rownames(t)), beside = T, xlab = "Tempo de Diagnóstico", args.legend = list(title = "Tipo de cirurgia"), main = paste("p-valor:",round(fisher.test(t, workspace = 2e+6)$p.value, 4)), col = rainbow(length((rownames(t))), .7, .7))
+t <- tip.tmp; barplot(t, legend.text =  (rownames(t)), beside = T, main = "Tempo de Diagnóstico", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t, workspace = 2e+6)$p.value, eps = .001, digits = 2)), col = rainbow(length((rownames(t))), .7, .7), ylab = "Número de pacientes")
 rm(t)
 dev.off()
 
