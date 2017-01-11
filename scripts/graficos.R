@@ -14,11 +14,10 @@ mybarplot <- function(tab, main) {
 
 png("figuras/barplots-metastase.png", width = 700, height = 700)
 par(mfrow = c(2,2))
-t <- met.sex; barplot(t, legend.text = (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), main = "Metástase por Sexo", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 2)), ylab = "Número de pacientes")
-t <- met.hist; barplot(t, legend.text =  (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), main = "Metástase por Tipo histológico", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 2)), ylab = "Número de pacientes")
-t <- met.obt; barplot(t, legend.text =  (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), main = "Metástase por Óbito", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 2)), ylab = "Número de pacientes")
-t <- met.cir; barplot(t, legend.text =  (rownames(t)), beside = T, col = rainbow(length((rownames(t))), .7, .7), main = "Metástase por Tipo de cirurgia", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 2)), ylab = "Número de pacientes")
-rm(t)
+mybarplot(met.sex, main = "Metástase por Sexo")
+mybarplot(met.hist, main = "Metástase por Tipo histológico")
+mybarplot(met.obt, main = "Metástase por Óbito")
+mybarplot(met.cir, main = "Metástase por Tipo de cirurgia")
 dev.off()
 
 png("figuras/bp-obitos_hist.png", width = 700, height = 700)
