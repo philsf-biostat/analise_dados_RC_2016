@@ -2,6 +2,7 @@
 dados <- read.table("dataset/dataset.dat")
 
 ## Processamento ####
+# Datas
 dados$Data_Nascimento <- as.Date(dados$Data_Nascimento)
 dados$Inicio_Sintomas <- as.Date(dados$Inicio_Sintomas)
 dados$Data_Diagnostico <- as.Date(dados$Data_Diagnostico)
@@ -9,6 +10,10 @@ dados$Data_Tratamento <- as.Date(dados$Data_Tratamento)
 dados$Data_Metastase <- as.Date(dados$Data_Metastase)
 dados$Data_Obito <- as.Date(dados$Data_Obito)
 dados$Data_Recidiva <- as.Date(dados$Data_Recidiva)
+
+# Fatores
+dados$Presenca_Metastase <- factor(dados$Presenca_Metastase, labels = c("Não", "Sim"))
+dados$Obito <- factor(dados$Obito, labels = c("Não", "Sim"))
 dados$Tipo_Histologico <- factor(dados$Tipo_Histologico, levels = c("G1", "G2", "G3", "D", "CC"))
 dados$Estadiamento <- factor(dados$Estadiamento)
 dados$tempo.diagnostico <- ordered(dados$tempo.diagnostico, levels = c("<3meses", "3 A 6 MESES", "6m a 1ano", "1 a 3 anos", ">3anos"))
