@@ -38,7 +38,7 @@ rm(t)
 dev.off()
 
 png("figuras/barplots-tipo_tempo.png", width = 700, height = 700)
-t <- tip.tmp; barplot(t, legend.text =  (rownames(t)), beside = T, xlab = "Tempo de Diagnóstico", args.legend = list(title = "Tipo de cirurgia"), main = paste("p-valor:", format.pval(fisher.test(t, workspace = 2e+6)$p.value, eps = .001, digits = 1)), col = rainbow(length((rownames(t))), .7, .7), ylab = "Número de pacientes")
+t <- tip.tmp; barplot(t, legend.text =  (rownames(t)), beside = T, main = "Tempo de Diagnóstico", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t, workspace = 2e+6)$p.value, eps = .001, digits = 1)), col = rainbow(length((rownames(t))), .7, .7), ylab = "Número de pacientes")
 rm(t)
 dev.off()
 
