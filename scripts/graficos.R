@@ -1,5 +1,5 @@
-source("scripts/input.R")
-source("scripts/tc.R")
+source("scripts/input.R", encoding = 'UTF-8')
+source("scripts/tc.R", encoding = 'UTF-8')
 
 mybarplot <- function(tab, main) {
   barplot(tab,

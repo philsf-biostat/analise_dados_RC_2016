@@ -29,7 +29,3 @@ dados <- dados[!names(dados) %in% c("Causa_Obito", "Hist_Obs", "Data_Recidiva")]
 
 ## attach() ####
 attach(dados)
-
-
-
-
