@@ -80,6 +80,6 @@ pander(read.csv2("resultados/tabela_met.csv"))
 # t <- CreateTableOne(data = dados, vars = c("Sexo", "Tipo_Histologico", "Obito", "Presenca_Metastase", "Local_Recidiva", "Localizacao", "Tipo_Cirurgia", "tempo.diagnostico"), strata = "Estadiamento", testExact = fisher.test, argsExact = list(workspace = 2 * 10^6))
 # pander(print(t, showAllLevels = T, exact = T, printToggle = F))
 # rm(t)
-pander(read.csv2("resultados/tabela_estad.csv"))
+pander(read.csv2("resultados/tabela_estadiam.csv"))
 ```
 
