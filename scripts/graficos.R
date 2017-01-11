@@ -11,7 +11,7 @@ rm(t)
 dev.off()
 
 png("figuras/bp-obitos_hist.png", width = 700, height = 700)
-t <- obt.hist; barplot(t, beside = T, legend.text = rownames(t), col = rainbow(length((rownames(t))), .7, .7), xlab = "Tipo histológico", args.legend = list(title = names(dimnames(t))[1]), main = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 1)), ylab = "Número de pacientes")
+t <- obt.hist; barplot(t, beside = T, legend.text = rownames(t), col = rainbow(length((rownames(t))), .7, .7), xlab = "Óbito por Tipo histológico", args.legend = list(title = names(dimnames(t))[1]), main = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 1)), ylab = "Número de pacientes")
 rm(t)
 dev.off()
 
@@ -24,7 +24,7 @@ t <- obt.est; barplot(t, legend.text =  (rownames(t)), beside = T, main = "Óbit
 dev.off()
 
 png("figuras/bp-obitos_cir.png", width = 700, height = 700)
-t <- obt.cir; barplot(t, beside = T, legend.text = rownames(t), col = rainbow(length((rownames(t))), .7, .7), xlab = "Tipo de cirurgia", args.legend = list(title = names(dimnames(t))[1]), main = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 1)), ylab = "Número de pacientes")
+t <- obt.cir; barplot(t, beside = T, legend.text = rownames(t), col = rainbow(length((rownames(t))), .7, .7), main = "Óbito por Tipo de cirurgia", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t)$p.value, eps = .001, digits = 1)), ylab = "Número de pacientes")
 rm(t)
 dev.off()
 
