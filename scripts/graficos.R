@@ -9,7 +9,7 @@ mybarplot <- function(tab, desfecho, preditor) {
           col = rainbow(length((rownames(tab))), .7, .7),
           main = main,
           ylim = c(0, 1.2*max(tab)),
-          args.legend = list(title = desfecho),
+          args.legend = list(title = preditor),
           xlab = paste("p-valor:", format.pval(fisher.test(tab, workspace = 2e+6)$p.value, eps = .001, digits = 2)),
           ylab = "Número de pacientes")
 }
