@@ -12,7 +12,7 @@ mybarplot <- function(tab, desfecho, preditor) {
           cex.main = 2,
           cex.axis = 1.2,
           cex.lab = 1.6,
-          cex.names = 1.2,
+          cex.names = 1.5,
           cex.sub = 1.2,
           ylim = c(0, 1.2*max(tab)),
           args.legend = list(title = preditor),
