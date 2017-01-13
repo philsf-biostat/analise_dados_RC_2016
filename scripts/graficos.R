@@ -1,14 +1,15 @@
 source("scripts/input.R", encoding = 'UTF-8')
 source("scripts/tc.R", encoding = 'UTF-8')
 
-mybarplot <- function(tab, main) {
+mybarplot <- function(tab, desfecho, preditor) {
+  main <- paste(desfecho, "por", preditor)
   barplot(tab,
           legend.text = (rownames(tab)),
           beside = T,
           col = rainbow(length((rownames(tab))), .7, .7),
           main = main,
           ylim = c(0, 1.2*max(tab)),
-          args.legend = list(title = names(dimnames(tab))[1]),
+          args.legend = list(title = desfecho),
           xlab = paste("p-valor:", format.pval(fisher.test(tab, workspace = 2e+6)$p.value, eps = .001, digits = 2)),
           ylab = "Número de pacientes")
 }
