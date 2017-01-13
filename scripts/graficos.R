@@ -53,8 +53,7 @@ mybarplot(est.cir, main = "Estadiamento por Tipo de cirurgia")
 dev.off()
 
 png("figuras/barplots-tipo_tempo.png", width = 700, height = 700)
-t <- tip.tmp; barplot(t, legend.text =  (rownames(t)), beside = T, main = "Tempo de Diagnóstico", args.legend = list(title = names(dimnames(t))[1]), xlab = paste("p-valor:", format.pval(fisher.test(t, workspace = 2e+6)$p.value, eps = .001, digits = 2)), col = rainbow(length((rownames(t))), .7, .7), ylab = "Número de pacientes")
-rm(t)
+mybarplot(tip.tmp, main = "Tempo de diagnóstico por tipo de cirurgia")
 dev.off()
 
 rm(met.sex, met.hist, met.obt, met.cir)
