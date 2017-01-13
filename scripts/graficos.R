@@ -15,7 +15,7 @@ mybarplot <- function(tab, desfecho, preditor) {
 }
 
 png("figuras/bp-metastase_sexo.png", 700, 700)
-mybarplot(met.sex, desfecho = "Metástase", preditor = "Sexo")
+mybarplot(met.sex, desfecho = "Metástase", preditor = "Gênero")
 dev.off()
 
 png("figuras/bp-metastase_hist.png", 700, 700)
@@ -43,7 +43,7 @@ mybarplot(obt.cir, desfecho = "Óbito", preditor = "Tipo de cirurgia")
 dev.off()
 
 png("figuras/bp-estad_sexo.png", 700, 700)
-mybarplot(est.sex, desfecho = "Estadiamento", preditor = "Sexo")
+mybarplot(est.sex, desfecho = "Estadiamento", preditor = "Gênero")
 dev.off()
 
 png("figuras/bp-estad_hist.png", 700, 700)
