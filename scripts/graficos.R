@@ -2,6 +2,7 @@ source("scripts/input.R", encoding = 'UTF-8')
 source("scripts/tc.R", encoding = 'UTF-8')
 
 mybarplot <- function(tab, desfecho, preditor) {
+  par(mar = c(7, 5, 4, 2) + 0.1) #add room for the rotated labels
   main <- paste(desfecho, "por", preditor)
   barplot(tab,
           legend.text = (rownames(tab)),
