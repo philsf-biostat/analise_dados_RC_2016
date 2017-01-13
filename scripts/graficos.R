@@ -15,7 +15,8 @@ mybarplot <- function(tab, desfecho, preditor) {
           cex.sub = 1.2,
           ylim = c(0, 1.2*max(tab)),
           args.legend = list(title = preditor),
-          xlab = paste("p-valor:", format.pval(fisher.test(tab, workspace = 2e+6)$p.value, eps = .001, digits = 2)),
+          xlab = desfecho,
+          sub = paste("p-valor:", format.pval(fisher.test(tab, workspace = 2e+6)$p.value, eps = .001, digits = 2)),
           ylab = "Número de pacientes")
 }
 
