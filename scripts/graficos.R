@@ -53,7 +53,7 @@ png("figuras/bp-estad_cirurg.png", 700, 700)
 mybarplot(est.cir, main = "Estadiamento por Tipo de cirurgia")
 dev.off()
 
-png("figuras/barplots-tipo_tempo.png", width = 700, height = 700)
+png("figuras/bp-tempo_cirurg.png", width = 700, height = 700)
 mybarplot(tip.tmp, main = "Tempo de diagnóstico por tipo de cirurgia")
 dev.off()
 
