@@ -9,7 +9,7 @@ mybarplot <- function(tab, desfecho, preditor) {
           beside = T,
           col = rainbow(length((rownames(tab))), .7, .7),
           main = main,
-          cex.main = 1.6,
+          cex.main = 2,
           cex.axis = 1.2,
           cex.lab = 1.6,
           cex.names = 1.2,
