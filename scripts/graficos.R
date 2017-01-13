@@ -59,7 +59,7 @@ mybarplot(tip.tmp, desfecho = "Tempo de diagnóstico", preditor = "Tipo de cirur
 dev.off()
 
 rm(met.sex, met.hist, met.obt, met.cir)
-rm(obt.sex, obt.hist, obt.met, obt.cir)
+rm(obt.sex, obt.hist, obt.met, obt.cir, obt.est)
 rm(est.sex, est.hist, est.obt, est.cir)
 rm(tip.tmp)
 source("scripts/cleanup.R")
