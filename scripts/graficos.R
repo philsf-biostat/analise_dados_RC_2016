@@ -18,7 +18,7 @@ mybarplot <- function(tab, desfecho, preditor) {
           args.legend = list(title = preditor),
           xlab = desfecho,
           ylab = "Número de pacientes")
-  mtext(paste("p-valor:", format.pval(fisher.test(tab, workspace = 2e+6)$p.value, eps = .001, digits = 2)))
+  mtext(paste("p-valor:", format.pval(fisher.test(tab, workspace = 2e+6)$p.value, eps = .001, digits = 2)), cex = 1.3)
 }
 
 png("figuras/bp-metastase_genero.png", 700, 700)
