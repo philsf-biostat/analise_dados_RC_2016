@@ -18,6 +18,7 @@ dados$Tipo_Histologico <- factor(dados$Tipo_Histologico, levels = c("G1", "G2", 
 dados$Estadiamento <- factor(dados$Estadiamento)
 dados$tempo.diagnostico <- ordered(dados$tempo.diagnostico, levels = c("<3meses", "3 A 6 MESES", "6m a 1ano", "1 a 3 anos", ">3anos"))
 dados$dt <- dados$Data_Tratamento - dados$Data_Diagnostico
+dados$dt.diag <- dados$Data_Diagnostico - dados$Inicio_Sintomas
 
 ## Removendo variáveis não consideradas ####
 dados <- dados[!names(dados) %in% c("Causa_Obito", "Hist_Obs", "Data_Recidiva")]
