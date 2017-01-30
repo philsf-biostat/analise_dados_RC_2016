@@ -3,53 +3,57 @@
 
 ## Metástase ####
 
-## Mestástase por sexo
-met.sex <- table(Sexo, Presenca_Metastase)
+## Mestástase por Genero
+met.sex <- with(dados, table(Genero, Presenca_Metastase))
 
 ## Metástase por tipo histológico
-met.hist <- table(Tipo_Histologico, Presenca_Metastase)
+met.hist <- with(dados, table(Tipo_Histologico, Presenca_Metastase))
 
 ## Metástase por óbito
-met.obt <- table(Obito, Presenca_Metastase)
+met.obt <- with(dados, table(Obito, Presenca_Metastase))
 
 ## Metástase por tipo de cirurgia
-met.cir <- table(Tipo_Cirurgia, Presenca_Metastase)
+met.cir <- with(dados, table(Tipo_Cirurgia, Presenca_Metastase))
 
 ## Óbito ####
 
-# Obito por sexo
-obt.sex <- table(Sexo, Obito)
+# Obito por Genero
+obt.sex <- with(dados, table(Genero, Obito))
 
 # Obito por tipo histologico
-obt.hist <- table(Tipo_Histologico, Obito)
+obt.hist <- with(dados, table(Tipo_Histologico, Obito))
 
 # Óbito por Metástase
-obt.met <- table(Presenca_Metastase, Obito)
+obt.met <- with(dados, table(Presenca_Metastase, Obito))
 
 ## Metástase por tipo de cirurgia
-obt.cir <- table(Tipo_Cirurgia, Obito)
+obt.cir <- with(dados, table(Tipo_Cirurgia, Obito))
 
 ## Óbito por Estadiamento
-obt.est <- table(Estadiamento, Obito)
+obt.est <- with(dados, table(Estadiamento, Obito))
 
 ## Estadiamento ####
 
-## Mestástase por sexo
-est.sex <- table(Sexo, Estadiamento)
+## Mestástase por Genero
+est.sex <- with(dados, table(Genero, Estadiamento))
 
 ## Estadiamento por tipo histológico
-est.hist <- table(Tipo_Histologico, Estadiamento)
+est.hist <- with(dados, table(Tipo_Histologico, Estadiamento))
 
 ## Estadiamento por óbito
-est.obt <- table(Obito, Estadiamento)
+est.obt <- with(dados, table(Obito, Estadiamento))
 
 ## Estadiamento por tipo de cirurgia
-est.cir <- table(Tipo_Cirurgia, Estadiamento)
-
-## Cleanup ####
-# source("scripts/cleanup.R")
+est.cir <- with(dados, table(Tipo_Cirurgia, Estadiamento))
 
 ## Tipo de Cirurgia ####
 
 ## Tempo de diagnóstico
-tip.tmp <- table(Tipo_Cirurgia, tempo.diagnostico)
+tmp.tip <- with(dados, table(tempo.diagnostico, Tipo_Cirurgia))
+colnames(tmp.tip)[2] <- "intrales." # abreviando "intralesional"
+colnames(tmp.tip)[5] <- "radio." # abreviando radioterapia
+colnames(tmp.tip)[6] <- "sem trat." # abreviando "sem tratamento"
+tmp.est <- with(dados, table(tempo.diagnostico, Estadiamento))
+tmp.hist <- with(dados, table(tempo.diagnostico, Tipo_Histologico))
+tmp.met <- with(dados, table(tempo.diagnostico, Presenca_Metastase))
+tmp.obt <- with(dados, table(tempo.diagnostico, Obito))
