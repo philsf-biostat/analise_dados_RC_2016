@@ -23,7 +23,7 @@ dados$Estadiamento <- factor(dados$Estadiamento)
 dados$dt <- dados$Data_Tratamento - dados$Data_Diagnostico
 dados$dt.diag <- dados$Data_Diagnostico - dados$Inicio_Sintomas
 dados$dt.diag <- as.numeric(dados$dt.diag)
-dados$tempo.diagnostico <- cut(dados$dt.diag, breaks = c(0, 90, 180, 365, 1095, Inf), right = F, ordered_result = T, labels = c("< 3meses", "3 A 6 meses", "6m a 1 ano", "1 a 3 anos", "> 3 anos"))
+dados$tempo.diagnostico <- cut(dados$dt.diag, breaks = c(0, 90, 180, 365, 1095, Inf), right = F, ordered_result = T, labels = c("< 3meses", "3 a 6 meses", "6m a 1 ano", "1 a 3 anos", "> 3 anos"))
 
 ## Removendo variáveis não consideradas ####
 dados <- dados[!names(dados) %in% c("Causa_Obito", "Hist_Obs", "Data_Recidiva")]
