@@ -77,6 +77,10 @@ png("figuras/bp-tempo_met.png", width = 700, height = 700)
 mybarplot(tmp.met, desfecho = "Metástase", preditor = "Tempo de diagnóstico")
 dev.off()
 
+png("figuras/bp-tempo_obt.png", width = 700, height = 700)
+mybarplot(tmp.obt, desfecho = "Óbito", preditor = "Tempo de diagnóstico")
+dev.off()
+
 png("figuras/EDA-tempo.png", 700, 700)
 dados <- as.data.table(dados)
 with(dados, hist(as.numeric(dt.diag), main = "", xlab = "", ylab = ""))

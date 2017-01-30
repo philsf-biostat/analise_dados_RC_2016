@@ -59,3 +59,4 @@ colnames(tmp.tip)[6] <- "sem trat." # abreviando "sem tratamento"
 tmp.est <- with(dados, table(tempo.diagnostico, Estadiamento))
 tmp.hist <- with(dados, table(tempo.diagnostico, Tipo_Histologico))
 tmp.met <- with(dados, table(tempo.diagnostico, Presenca_Metastase))
+tmp.obt <- with(dados, table(tempo.diagnostico, Obito))
