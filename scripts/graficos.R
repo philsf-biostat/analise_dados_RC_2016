@@ -62,7 +62,23 @@ mybarplot(est.cir, desfecho = "Estadiamento", preditor = "Tipo de cirurgia")
 dev.off()
 
 png("figuras/bp-tempo_cirurg.png", width = 700, height = 700)
-mybarplot(tip.tmp, desfecho = "Tempo de diagnóstico", preditor = "Tipo de cirurgia")
+mybarplot(tmp.tip, desfecho = "Tipo de cirurgia", preditor = "Tempo de diagnóstico")
+dev.off()
+
+png("figuras/bp-tempo_estad.png", width = 700, height = 700)
+mybarplot(tmp.est, desfecho = "Estadiamento", preditor = "Tempo de diagnóstico")
+dev.off()
+
+png("figuras/bp-tempo_hist.png", width = 700, height = 700)
+mybarplot(tmp.hist, desfecho = "Tipo Histológico", preditor = "Tempo de diagnóstico")
+dev.off()
+
+png("figuras/bp-tempo_met.png", width = 700, height = 700)
+mybarplot(tmp.met, desfecho = "Metástase", preditor = "Tempo de diagnóstico")
+dev.off()
+
+png("figuras/bp-tempo_obt.png", width = 700, height = 700)
+mybarplot(tmp.obt, desfecho = "Óbito", preditor = "Tempo de diagnóstico")
 dev.off()
 
 png("figuras/EDA-tempo.png", 700, 700)
@@ -79,5 +95,5 @@ dev.off()
 rm(met.sex, met.hist, met.obt, met.cir)
 rm(obt.sex, obt.hist, obt.met, obt.cir, obt.est)
 rm(est.sex, est.hist, est.obt, est.cir)
-rm(tip.tmp)
+rm(tmp.tip)
 source("scripts/cleanup.R")

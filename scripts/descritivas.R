@@ -39,4 +39,12 @@ write.csv2(t, "resultados/tabela_estadiam.csv")
 pander(t)
 rm(t)
 
+# Estratificação: Tempo de Diagnóstico ####
+t <- CreateCatTable(vars = c("Estadiamento", "Tipo_Histologico", "Presenca_Metastase", "Obito"), strata = "tempo.diagnostico", data = dados, argsExact = list(workspace = 2 * 10^6))
+t <- print(t, exact = T, printToggle = F, quote = F)
+t <- subset(t, select = -c(test))
+write.csv2(t, "resultados/tabela_tempodiag.csv")
+pander(t)
+rm(t)
+
 source("scripts/cleanup.R")
