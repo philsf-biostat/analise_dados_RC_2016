@@ -53,3 +53,6 @@ est.cir <- table(Tipo_Cirurgia, Estadiamento)
 
 ## Tempo de diagnóstico
 tmp.tip <- with(dados, table(tempo.diagnostico, Tipo_Cirurgia))
+colnames(tmp.tip)[2] <- "intrales." # abreviando "intralesional"
+colnames(tmp.tip)[5] <- "radio." # abreviando radioterapia
+colnames(tmp.tip)[6] <- "sem trat." # abreviando "sem tratamento"
