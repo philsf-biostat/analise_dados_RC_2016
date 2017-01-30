@@ -69,6 +69,10 @@ png("figuras/bp-tempo_estad.png", width = 700, height = 700)
 mybarplot(tmp.est, desfecho = "Estadiamento", preditor = "Tempo de diagnóstico")
 dev.off()
 
+png("figuras/bp-tempo_hist.png", width = 700, height = 700)
+mybarplot(tmp.hist, desfecho = "Tipo Histológico", preditor = "Tempo de diagnóstico")
+dev.off()
+
 png("figuras/EDA-tempo.png", 700, 700)
 dados <- as.data.table(dados)
 with(dados, hist(as.numeric(dt.diag), main = "", xlab = "", ylab = ""))

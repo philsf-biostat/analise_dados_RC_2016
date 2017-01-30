@@ -57,3 +57,4 @@ colnames(tmp.tip)[2] <- "intrales." # abreviando "intralesional"
 colnames(tmp.tip)[5] <- "radio." # abreviando radioterapia
 colnames(tmp.tip)[6] <- "sem trat." # abreviando "sem tratamento"
 tmp.est <- with(dados, table(tempo.diagnostico, Estadiamento))
+tmp.hist <- with(dados, table(tempo.diagnostico, Tipo_Histologico))
