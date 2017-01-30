@@ -52,4 +52,4 @@ est.cir <- table(Tipo_Cirurgia, Estadiamento)
 ## Tipo de Cirurgia ####
 
 ## Tempo de diagnóstico
-tmp.tip <- table(Tipo_Cirurgia, tempo.diagnostico)
+tmp.tip <- with(dados, table(tempo.diagnostico, Tipo_Cirurgia))

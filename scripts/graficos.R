@@ -62,7 +62,7 @@ mybarplot(est.cir, desfecho = "Estadiamento", preditor = "Tipo de cirurgia")
 dev.off()
 
 png("figuras/bp-tempo_cirurg.png", width = 700, height = 700)
-mybarplot(tmp.tip, desfecho = "Tempo de diagnóstico", preditor = "Tipo de cirurgia")
+mybarplot(tmp.tip, desfecho = "Tipo de cirurgia", preditor = "Tempo de diagnóstico")
 dev.off()
 
 png("figuras/EDA-tempo.png", 700, 700)
