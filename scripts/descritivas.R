@@ -1,7 +1,7 @@
 source("scripts/input.R")
 
 # Descrição do local do cancer
-# round(prop.table(table(Localizacao)), digits = 3)*100
+# round(prop.table(with(dados, table(Localizacao))), digits = 3)*100
 
 library(pander)
 panderOptions('table.style', 'rmarkdown')
