@@ -1,3 +1,6 @@
+## Clean start ####
+rm(list = ls())
+
 ## Dados brutos ####
 dados <- read.table("dataset/dataset.dat")
 
