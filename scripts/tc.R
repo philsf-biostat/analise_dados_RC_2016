@@ -46,9 +46,6 @@ est.obt <- with(dados, table(Obito, Estadiamento))
 ## Estadiamento por tipo de cirurgia
 est.cir <- with(dados, table(Tipo_Cirurgia, Estadiamento))
 
-## Cleanup ####
-# source("scripts/cleanup.R")
-
 ## Tipo de Cirurgia ####
 
 ## Tempo de diagnóstico

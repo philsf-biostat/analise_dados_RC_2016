@@ -46,5 +46,3 @@ t <- subset(t, select = -c(test))
 write.csv2(t, "resultados/tabela_tempodiag.csv")
 pander(t)
 rm(t)
-
-source("scripts/cleanup.R")
