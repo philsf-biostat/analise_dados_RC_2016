@@ -3,8 +3,8 @@
 
 ## Metástase ####
 
-## Mestástase por sexo
-met.sex <- table(Sexo, Presenca_Metastase)
+## Mestástase por Genero
+met.sex <- table(Genero, Presenca_Metastase)
 
 ## Metástase por tipo histológico
 met.hist <- table(Tipo_Histologico, Presenca_Metastase)
@@ -17,8 +17,8 @@ met.cir <- table(Tipo_Cirurgia, Presenca_Metastase)
 
 ## Óbito ####
 
-# Obito por sexo
-obt.sex <- table(Sexo, Obito)
+# Obito por Genero
+obt.sex <- table(Genero, Obito)
 
 # Obito por tipo histologico
 obt.hist <- table(Tipo_Histologico, Obito)
@@ -34,8 +34,8 @@ obt.est <- table(Estadiamento, Obito)
 
 ## Estadiamento ####
 
-## Mestástase por sexo
-est.sex <- table(Sexo, Estadiamento)
+## Mestástase por Genero
+est.sex <- table(Genero, Estadiamento)
 
 ## Estadiamento por tipo histológico
 est.hist <- table(Tipo_Histologico, Estadiamento)
