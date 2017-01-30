@@ -1,3 +1,6 @@
+## Clean start ####
+rm(list = ls())
+
 ## Dados brutos ####
 dados <- read.table("dataset/dataset.dat")
 
@@ -29,6 +32,3 @@ dados <- dados[!names(dados) %in% c("Causa_Obito", "Hist_Obs", "Data_Recidiva")]
 ## d1 <- dados$Data_Diagnostico[9]
 ## d2 <- dados$Data_Tratamento[9]
 ## length(seq(d1,d2, "month")) - 1
-
-## attach() ####
-attach(dados)

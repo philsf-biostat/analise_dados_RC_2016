@@ -1,7 +1,7 @@
 source("scripts/input.R")
 
 # Descrição do local do cancer
-# round(prop.table(table(Localizacao)), digits = 3)*100
+# round(prop.table(with(dados, table(Localizacao))), digits = 3)*100
 
 library(pander)
 panderOptions('table.style', 'rmarkdown')
@@ -46,5 +46,3 @@ t <- subset(t, select = -c(test))
 write.csv2(t, "resultados/tabela_tempodiag.csv")
 pander(t)
 rm(t)
-
-source("scripts/cleanup.R")
