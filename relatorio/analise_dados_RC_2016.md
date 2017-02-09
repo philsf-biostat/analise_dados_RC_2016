@@ -2,16 +2,45 @@
 Felipe Figueiredo  
 April 12, 2016  
 
+# Introdução
+
+# Justificativa
+
+# Objetivos
+
 # Metodologia utilizada
 
-A análise descritiva foi apresentada na forma de tabelas e figuras.
-Os dados observados foram sumarizados pela média e desvio padrão (DP) para dados numéricos (quantitativos) e pela frequência (n) e proporção (%) para dados categóricos (qualitativos).
-Foram feitas tabelas de contingência para inferir a associação de dados categóricos de contagens.
-A significância da associação desses dados foi determinada utilizando-se o teste exato de Fisher.
+## Variáveis coletadas no estudo
 
-Em todas as análises, foi adotada a significância de 5%.
-As análises estatísticas foram feitas utilizando o software estatístico R, versão 3.3.2 (https://www.R-project.org).
+Para a análise dos dados foram coletados dados das seguintes variáveis: gênero, tipo histológico, presença de metástase, ocorrência de óbito, tipo de cirurgia, estadiamento.
+Além destas variáveis, foram coletadas a data do início dos sintomas e a data do diagnóstico, que foram utilizadas para estimar o tempo de diagnóstico conforme descrito na seção seguinte.
 
+### Tratamento dos dados
+
+Após o levantamento dos dados brutos, o tempo de diagnóstico para cada paciente foi determinado como o tempo decorrido entre o início dos sintomas e a data do diagnóstico.
+
+
+## Análise estatística
+
+Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão 3.3.2 (https://www.R-project.org).
+
+### Análise descritiva
+
+Como todas as variáveis do estudo são categóricas (gênero, tipo histológico, presença de metástase, ocorrência de óbito, tipo de cirurgia, estadiamento e tempo de diagnóstico), as mesmas foram descritas como frequência (n) e proporção (%) em tabelas e figuras.
+
+### Associação entre dados categóricos
+
+A fim de avaliar se havia associação dos dados categóricos, foram criadas tabelas de contingência que estratificam os dados pelos desfechos de interesse.
+Nestas investigações as as seguintes variáveis foram consideradas desfechos de interesse o estadiamento, a presença de metástase, o tempo de cirurgia e o óbito.
+
+Desta forma, o estadiamento foi testado como desfecho para os preditores tipo de cirurgia, gênero, tipo histológico e presença de metástase.
+Quando o tempo de diagnóstico foi testado como desfecho os preditores avaliados foram estadiamento, tipo histológico, presença de metástase e óbito.
+A presença de metástase foi avaliada como desfecho para os preditores tipo histológico, o gênero e o tipo de cirurgia.
+Por fim quando o óbito foi considerado o desfecho os preditores testados foram o tipo histológico, o estadiamento, o tipo de cirurgia e a presença de metástase.
+
+Como em algumas variáveis não havia observações suficientes para algumas categorias, a significância estatística da associação foi avaliada com o Teste Exato de Fisher.
+
+Em todas as análises foi utilizado o nível de significância de 5%.
 
 # Resultados
 
@@ -30,7 +59,7 @@ As análises estatísticas foram feitas utilizando o software estatístico R, ve
 ---------------------- -------------- ---------
           n                              65    
 
-       Sexo (%)              F        29 (44.6)
+      Genero (%)             F        29 (44.6)
 
                              M        36 (55.4)
 
@@ -82,15 +111,15 @@ Presenca_Metastase (%)      Não       52 (81.2)
 
                             III       4 ( 6.2) 
 
-tempo.diagnostico (%)     <3meses     8 (12.3) 
+tempo.diagnostico (%)     < 3meses    9 (13.8) 
 
-                        3 A 6 MESES   5 ( 7.7) 
+                        3 a 6 meses   9 (13.8) 
 
-                         6m a 1ano    19 (29.2)
+                         6m a 1 ano   15 (23.1)
 
-                         1 a 3 anos   24 (36.9)
+                         1 a 3 anos   23 (35.4)
 
-                           >3anos     9 (13.8) 
+                          > 3 anos    9 (13.8) 
 -----------------------------------------------
 
 ## Extratificação: Óbito
@@ -101,7 +130,7 @@ tempo.diagnostico (%)     <3meses     8 (12.3)
 ---------------------- -------------- --------- --------- -----
           n                              53        12          
 
-       Sexo (%)              F        25 (47.2) 4 (33.3)  0.524
+      Genero (%)             F        25 (47.2) 4 (33.3)  0.524
 
                              M        28 (52.8) 8 (66.7)       
 
@@ -149,26 +178,26 @@ Presenca_Metastase (%)      Não       47 (90.4) 5 (41.7)  0.001
 
                             III       1 ( 1.9)  3 (25.0)       
 
-tempo.diagnostico (%)     <3meses     5 ( 9.4)  3 (25.0)  0.588
+tempo.diagnostico (%)     < 3meses    6 (11.3)  3 (25.0)  0.627
 
-                        3 A 6 MESES   5 ( 9.4)  0 ( 0.0)       
+                        3 a 6 meses   8 (15.1)  1 ( 8.3)       
 
-                         6m a 1ano    15 (28.3) 4 (33.3)       
+                         6m a 1 ano   11 (20.8) 4 (33.3)       
 
-                         1 a 3 anos   20 (37.7) 4 (33.3)       
+                         1 a 3 anos   20 (37.7) 3 (25.0)       
 
-                           >3anos     8 (15.1)  1 ( 8.3)       
+                          > 3 anos    8 (15.1)  1 ( 8.3)       
 ---------------------------------------------------------------
 
 ## Extratificação: Metástase
 
 
 --------------------------------------------------------------
-          X               level        Não.      Sim      p   
+          X               level         Não      Sim      p   
 --------------------- -------------- --------- -------- ------
           n                             52        12          
 
-      Sexo (%)              F        22 (42.3) 6 (50.0) 0.750 
+     Genero (%)             F        22 (42.3) 6 (50.0) 0.750 
 
                             M        30 (57.7) 6 (50.0)       
 
@@ -216,15 +245,15 @@ Tipo_Histologico (%)        G1       26 (50.0) 0 ( 0.0) <0.001
 
                            III       0 ( 0.0)  4 (33.3)       
 
-tempo.diagnostico (%)    <3meses     5 ( 9.6)  3 (25.0) 0.237 
+tempo.diagnostico (%)    < 3meses    7 (13.5)  2 (16.7) 0.600 
 
-                       3 A 6 MESES   5 ( 9.6)  0 ( 0.0)       
+                       3 a 6 meses   7 (13.5)  2 (16.7)       
 
-                        6m a 1ano    14 (26.9) 5 (41.7)       
+                        6m a 1 ano   11 (21.2) 4 (33.3)       
 
-                        1 a 3 anos   19 (36.5) 4 (33.3)       
+                        1 a 3 anos   18 (34.6) 4 (33.3)       
 
-                          >3anos     9 (17.3)  0 ( 0.0)       
+                         > 3 anos    9 (17.3)  0 ( 0.0)       
 --------------------------------------------------------------
 
 ## Extratificação: Estadiamento
@@ -235,7 +264,7 @@ tempo.diagnostico (%)    <3meses     5 ( 9.6)  3 (25.0) 0.237
 ---------------------- -------------- ---------- ---------- --------- --------- --------- ------
           n                               20         10         9        22         4           
 
-       Sexo (%)              F        10 ( 50.0) 2 ( 20.0)  4 ( 44.4) 9 (40.9)  4 (100.0) 0.107 
+      Genero (%)             F        10 ( 50.0) 2 ( 20.0)  4 ( 44.4) 9 (40.9)  4 (100.0) 0.107 
 
                              M        10 ( 50.0) 8 ( 80.0)  5 ( 55.6) 13 (59.1) 0 ( 0.0)        
 
