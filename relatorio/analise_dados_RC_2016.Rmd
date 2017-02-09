@@ -5,9 +5,17 @@ date: "April 12, 2016"
 output:
   html_document:
     keep_md: yes
-  pdf_document: default
+    number_sections: yes
+  pdf_document: 
+    number_sections: yes
   word_document: default
 ---
+
+# Introdução
+
+# Justificativa
+
+# Objetivos
 
 # Metodologia utilizada
 
