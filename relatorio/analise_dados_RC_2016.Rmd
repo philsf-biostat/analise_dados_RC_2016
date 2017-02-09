@@ -42,6 +42,11 @@ Como todas as variáveis do estudo são categóricas (gênero, tipo histológico
 A fim de avaliar se havia associação dos dados categóricos, foram criadas tabelas de contingência que estratificam os dados pelos desfechos de interesse.
 Nestas investigações as as seguintes variáveis foram consideradas desfechos de interesse o estadiamento, a presença de metástase, o tempo de cirurgia e o óbito.
 
+Desta forma, o estadiamento foi testado como desfecho para os preditores tipo de cirurgia, gênero, tipo histológico e presença de metástase.
+Quando o tempo de diagnóstico foi testado como desfecho os preditores avaliados foram estadiamento, tipo histológico, presença de metástase e óbito.
+A presença de metástase foi avaliada como desfecho para os preditores tipo histológico, o gênero e o tipo de cirurgia.
+Por fim quando o óbito foi considerado o desfecho os preditores testados foram o tipo histológico, o estadiamento, o tipo de cirurgia e a presença de metástase.
+
 Como em algumas variáveis não havia observações suficientes para algumas categorias, a significância estatística da associação foi avaliada com o Teste Exato de Fisher.
 
 Em todas as análises foi utilizado o nível de significância de 5%.

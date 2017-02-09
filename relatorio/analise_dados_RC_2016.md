@@ -2,16 +2,45 @@
 Felipe Figueiredo  
 April 12, 2016  
 
+# Introdução
+
+# Justificativa
+
+# Objetivos
+
 # Metodologia utilizada
 
-A análise descritiva foi apresentada na forma de tabelas e figuras.
-Os dados observados foram sumarizados pela média e desvio padrão (DP) para dados numéricos (quantitativos) e pela frequência (n) e proporção (%) para dados categóricos (qualitativos).
-Foram feitas tabelas de contingência para inferir a associação de dados categóricos de contagens.
-A significância da associação desses dados foi determinada utilizando-se o teste exato de Fisher.
+## Variáveis coletadas no estudo
 
-Em todas as análises, foi adotada a significância de 5%.
-As análises estatísticas foram feitas utilizando o software estatístico R, versão 3.3.2 (https://www.R-project.org).
+Para a análise dos dados foram coletados dados das seguintes variáveis: gênero, tipo histológico, presença de metástase, ocorrência de óbito, tipo de cirurgia, estadiamento.
+Além destas variáveis, foram coletadas a data do início dos sintomas e a data do diagnóstico, que foram utilizadas para estimar o tempo de diagnóstico conforme descrito na seção seguinte.
 
+### Tratamento dos dados
+
+Após o levantamento dos dados brutos, o tempo de diagnóstico para cada paciente foi determinado como o tempo decorrido entre o início dos sintomas e a data do diagnóstico.
+
+
+## Análise estatística
+
+Todos os tratamentos e as análises dos dados foram realizados no software estatístico R, versão 3.3.2 (https://www.R-project.org).
+
+### Análise descritiva
+
+Como todas as variáveis do estudo são categóricas (gênero, tipo histológico, presença de metástase, ocorrência de óbito, tipo de cirurgia, estadiamento e tempo de diagnóstico), as mesmas foram descritas como frequência (n) e proporção (%) em tabelas e figuras.
+
+### Associação entre dados categóricos
+
+A fim de avaliar se havia associação dos dados categóricos, foram criadas tabelas de contingência que estratificam os dados pelos desfechos de interesse.
+Nestas investigações as as seguintes variáveis foram consideradas desfechos de interesse o estadiamento, a presença de metástase, o tempo de cirurgia e o óbito.
+
+Desta forma, o estadiamento foi testado como desfecho para os preditores tipo de cirurgia, gênero, tipo histológico e presença de metástase.
+Quando o tempo de diagnóstico foi testado como desfecho os preditores avaliados foram estadiamento, tipo histológico, presença de metástase e óbito.
+A presença de metástase foi avaliada como desfecho para os preditores tipo histológico, o gênero e o tipo de cirurgia.
+Por fim quando o óbito foi considerado o desfecho os preditores testados foram o tipo histológico, o estadiamento, o tipo de cirurgia e a presença de metástase.
+
+Como em algumas variáveis não havia observações suficientes para algumas categorias, a significância estatística da associação foi avaliada com o Teste Exato de Fisher.
+
+Em todas as análises foi utilizado o nível de significância de 5%.
 
 # Resultados
 
