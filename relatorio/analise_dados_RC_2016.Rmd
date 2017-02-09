@@ -6,9 +6,11 @@ output:
   html_document:
     keep_md: yes
     number_sections: yes
-  pdf_document: 
+  pdf_document:
     number_sections: yes
-  word_document: default
+  word_document:
+    fig_caption: yes
+    reference_docx: misc/style.docx
 ---
 
 # Introdução
